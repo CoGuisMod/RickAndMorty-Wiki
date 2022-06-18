@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-white;
+}
+
+.text-shadow {
+  text-shadow: 1rem 1rem 1rem rgba(0, 0, 0);
+}
+
+.controlButton {
+  @apply flex justify-center items-center border hover:border-cyan-500 rounded-lg hover:text-cyan-500 p-2;
+}
+
+.navigationButtons {
+  @apply hover:text-cyan-500;
+}
+
+.navigationActive {
+  @apply text-cyan-500;
+}
+
+.navigationDisabled {
+  @apply text-black/50;
+}
