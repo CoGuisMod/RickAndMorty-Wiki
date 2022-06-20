@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ character }) => {
   console.log(character);
   return (
-    <div className="border rounded-xl">
+    <div className="border rounded-xl overflow-hidden">
       <div className="relative">
         <img
           src={character.image}

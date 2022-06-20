@@ -10,6 +10,10 @@ body {
   text-shadow: 1rem 1rem 1rem rgba(0, 0, 0);
 }
 
+.nav-link-hover:hover {
+  @apply text-cyan-500;
+}
+
 .controlButton {
   @apply flex justify-center items-center border hover:border-cyan-500 rounded-lg hover:text-cyan-500 p-2;
 }

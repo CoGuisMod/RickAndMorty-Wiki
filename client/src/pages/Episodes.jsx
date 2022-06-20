@@ -31,12 +31,13 @@ const Episodes = () => {
   return (
     <>
       <Hero heroTitle="Rick and Morty Episodes" heroImg={episodesHero} />
-      <div className="flex flex-col md:flex-row items-center md:items-start text-black px-4 pt-4">
-        <aside className="border rounded-lg p-2 w-full md:w-1/5 mb-4">
-          <div className="relative flex items-center ">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-black mb-8 px-4 pt-4">
+        <aside className="border rounded-lg p-2 md:p-4 w-full md:max-w-xs">
+          <div className="relative flex items-center">
             <input
               onChange={(e) => {
                 setEpiName(e.target.value);
+                setPageCount(1);
               }}
               type="text"
               className="border rounded-xl w-full pl-2 pr-8 py-1"
@@ -44,7 +45,7 @@ const Episodes = () => {
             <FaSearch className="absolute right-2" />
           </div>
         </aside>
-        <section className="w-full max-w-7xl ml-4">
+        <section className="w-full max-w-7xl">
           <ReactPaginate
             breakLabel="..."
             previousLabel={<FaAngleLeft />}
@@ -59,13 +60,19 @@ const Episodes = () => {
             disabledClassName={"navigationDisabled"}
             className="flex justify-center items-center gap-2 border rounded mb-4 p-2"
           />
-          <div className="grid md:grid-cols-2 gap-x-3 gap-y-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-4">
             {episodes.map((episode) => (
-              <div className="border rounded-xl w-full p-4">
-                <div className="flex items-baseline gap-4">
-                  <span className="font-bold text-2xl">#{episode.id}</span>
-                  <h3 className="font-medium text-2xl">{episode.name}</h3>
-                  <span className="text-black/75">{episode.type}</span>
+              <div className="flex justify-between items-center border rounded-xl text-lg w-full p-4">
+                <div className="flex flex-col justify-between items-start gap-2 h-full">
+                  <span className="font-bold text-2xl">
+                    {episode.name}
+                    <span className="font-medium text-black/75 text-lg ml-2">
+                      - {episode.episode}
+                    </span>
+                  </span>
+                  <span className="font-medium">
+                    Air date: {episode.air_date}
+                  </span>
                 </div>
               </div>
             ))}

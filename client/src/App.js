@@ -5,7 +5,6 @@ import Characters from "./pages/Characters";
 import Character from "./components/Character";
 import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
-import Location from "./components/Location";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Route path="/characters" element={<Characters />} />
         <Route path="/characters/:id" element={<Character />} />
         <Route path="/locations" element={<Locations />} />
-        <Route path="/locations/:id" element={<Location />} />
         <Route path="/episodes" element={<Episodes />} />
       </Routes>
       <Footer />
